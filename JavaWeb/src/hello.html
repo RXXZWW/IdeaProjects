@@ -1,0 +1,183 @@
+<!DOCTYPE html><!--约束声明-->
+<html lang="zh_CN"><!-- html标签 表示html开始 lang="zh_CN"表示中文 html中一般分为两部分:head和body-->
+<head><!--表示头部信息 一般包含三部分：title标题，css样式，js脚本代码-->
+    <meta charset="UTF-8"><!--表示当前使用UTF-8字符集-->
+    <title>标题</title><!--表示标题-->
+</head>
+<body><!--body标签是整个页面显示的主体内容-->
+    hello
+    <button onclick="alert(111)"></button>
+    <!--font是字体标签，它可以修改颜色color，字体样式face，以及大小size -->
+    <font color="red" face="宋体" size="124">你好</font>
+
+
+
+    <!--特殊字符的处理
+        把<br>换行标签变成文本 转换显示在网页上
+
+        常用的特殊字符
+            <     &lt;
+            >     &gt;
+           " "    &nbsp;浏览器会自动裁掉多余的空格，所以需要用特殊字符进行扩充
+    -->
+    我是<br>标签
+    我是&lt;br&gt;标签
+
+    <!--标题标签
+        h1----h6
+
+        h1最大
+        h6最小
+        align属性是对齐属性
+
+    -->
+    <h1 align="left">标题1</h1>
+    <h2 align="center">标题2</h2>
+    <h3 align="right">标题3</h3>
+    <h4>标题4</h4>
+    <h5>标题5</h5>
+    <h6>标题6</h6>
+
+
+    <!--超链接    重点！！！！！
+        在这页面所有点击之后可以跳转的内容都是超链接
+        herf属性设置链接的地址
+        target属性设置哪个目标进行跳转
+            _self   表示当前页面
+            _blank  表示打开新页面进行跳转
+    -->
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+
+
+    <!--列表标签
+        无序列表（大部分） 有序列表 定义列表
+        ul 是无序列表
+            type属性可以修改列表项前面的符号  在不同的浏览器会有兼容问题
+        ol 是有序列表
+    -->
+
+    <ul>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+    </ul>
+    <ol>
+
+    </ol>
+
+<!--img标签
+    用来显示图片
+        src属性可以设置图片的路径
+        width,height属性可以设置图片的宽度和高度
+        border属性可以给图片设置边框
+        alt属性设置当指定路径找不到图片是，用来代替显示的文本内容
+    在javaSE中也分为相对路径和绝对路径
+        相对路径：从工程名开始算
+
+
+        绝对路径：盘符：//目录//文件名
+
+    在web中路径分为相对路径和绝对路径
+        相对路径：
+        .       表示当前文件所在的目录
+        ..      表示当前文件所在的上一级目录
+        文件名   表示当前文件所在目录的文件，相当于./文件名   ./可以省略
+
+        绝对路径：
+            正确格式为：http://ip:port/工程名/资源路径
+            错误格式为：盘符:/目录/文件名
+    -->
+
+
+    <!--表格标签        重点！！！！！
+        例子:     做一个 带表头的，三行，三列的表格，并显示边框
+                 修改表格的宽度，高度，表格的对齐方式，单元格间距
+
+            table 标签是表格标签
+                border设置表格边框
+                width设置表格宽度
+                height设置表格高度
+                align设置表格相对于页面的对齐方式
+                cellspacing设置单元格间距
+            tr 是行标签
+            th 是表头标签
+            td 是单元格标签
+                align设置单元格对齐方式
+            b 是加粗标签
+    -->
+    <table align="center" border="1" width="300" height="300" cellspacing="0">
+        <tr>
+            <th>1.1</th>
+            <th>1.2</th>
+            <th>1.3</th>
+        </tr>
+        <tr>
+            <td>2.1</td>
+            <td>2.2</td>
+            <td>2.3</td>
+        </tr>
+        <tr>
+            <td>3.1</td>
+            <td>3.2</td>
+            <td>3.3</td>
+        </tr>
+    </table>
+
+
+    <!--表格的跨行跨列         重点！！！！！
+        例子：新建一个五行五列的表格，
+             第一行，第一列的单元格要跨两列，
+             第二行，第一列的单元格要跨两行，
+             第四行，第四列的单元格要跨两行两列
+
+        colspan 属性设置跨列 相当于占了两列的宽度，会顶掉多占的列
+        rowspan 属性设置跨行 同样会顶掉
+        被顶掉的元素会默认往右进行扩展
+    -->
+    <table border="1" width="300" height="300" cellspcacing="0">
+        <tr>
+            <td colspan="2">1.1</td>
+            <td>1.3</td>
+            <td>1.4</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td rowspan="2">2.1</td>
+            <td>2.2</td>
+            <td>2.3</td>
+            <td>2.4</td>
+            <td>2.5</td>
+        </tr>
+        <tr>
+            <td>3.2</td>
+            <td>3.3</td>
+            <td>3.4</td>
+            <td>3.5</td>
+        </tr>
+        <tr>
+            <td>4.1</td>
+            <td>4.2</td>
+            <td>4.3</td>
+            <td colspan="2" rowspan="2">4.4</td>
+        </tr>
+        <tr>
+            <td>5.1</td>
+            <td>5.2</td>
+            <td>5.3</td>
+        </tr>
+    </table>
+
+
+    <!--iframe标签            重点！！！！！
+        可以在一个html页面上，打开一个小窗口，去加载一个单独的页面
+        iframe和a标签组合使用的步骤：
+            1.在iframe标签中使用name属性定义一个名称
+            2.在a标签中的target属性上设置iframe的name的属性值
+    -->
+    <iframe></iframe>
+
+
+
+
+</body>
+</html>
